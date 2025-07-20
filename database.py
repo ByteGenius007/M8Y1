@@ -4,6 +4,7 @@ from datetime import datetime
 DB_NAME = 'data/professions.db'
 
 
+
 def connect():
     return sqlite3.connect(DB_NAME)
 
@@ -34,6 +35,8 @@ def init_db():
 
     conn.commit()
     conn.close()
+
+
 
 def add_profession(category, title, description):
     conn = connect()
@@ -67,3 +70,5 @@ def save_user(tg_id, interests):
     ''', (tg_id, interests, datetime.now().isoformat()))
     conn.commit()
     conn.close()
+
+
